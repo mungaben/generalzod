@@ -1,13 +1,15 @@
 import REgisterUser from "@/components/REgisterUser";
 import Tbaleava from "@/components/Tbaleava";
-import { Table,
+import {
+  Table,
   TableHeader,
   TableBody,
   TableFooter,
   TableHead,
   TableRow,
   TableCell,
-  TableCaption, } from "@/components/ui/table";
+  TableCaption,
+} from "@/components/ui/table";
 import Image from "next/image";
 
 export default function Home() {
