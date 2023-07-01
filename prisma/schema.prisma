@@ -12,4 +12,23 @@ datasource db {
 
 
 
+// primsa model for user
+model User {
+   id String @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  job           String?
+  specification String
+  email         String    @unique
+  phonenumber   String?
+  confirmemail  String
+  url           String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+
+
+
+
+
 
