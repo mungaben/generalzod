@@ -1,5 +1,6 @@
 
 
+import { DataUser } from "@/Utils/ZodSchema";
 import { NextResponse, NextRequest } from "next/server";
 import { any, number, z } from "zod";
 
@@ -8,18 +9,7 @@ import { any, number, z } from "zod";
 //     data: { name: 'Zod', job: 'KRYPTO VILLIAN', specification: 'protector' }
 //   }
 
-const DataUser = z.object({
-    name: z.string().default('krypto'),
-    job: z.string(),
-    specification: z.string(),
-    email: z.string().email(),
-    phonenumber: z.string().optional(),
-    confirmemail: z.string().email(),
-    url: z.string().url().optional(),
-}).refine((data) => data.email === data.confirmemail, {
-    message: 'Emails must match',
-    path: ['confirmemail']
-})
+
 
 const User = z.object({
     data: DataUser
